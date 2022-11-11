@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home_fragment">
+
+    <fragment
+        android:id="@+id/nav_home_fragment"
+        android:name="com.ahoy.weathertask.presentation.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_homeFragment_to_currentweatherfragment"
+            app:destination="@id/nav_current_weather_fragment" />
+        <action
+            android:id="@+id/action_nav_homeFragment_to_favourite_fragment"
+            app:destination="@id/nav_favourite_fragment" />
+        <action
+            android:id="@+id/action_nav_homeFragment_to_search_fragment"
+            app:destination="@id/nav_search_fragment" />
+        <action
+            android:id="@+id/action_nav_homeFragment_to_settings_fragment"
+            app:destination="@id/nav_settings_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_current_weather_fragment"
+        android:name="com.ahoy.weathertask.presentation.current.CurrentWeatherFragment"
+        android:label="current weather"
+        tools:layout="@layout/fragment_current_weather" />
+    <fragment
+        android:id="@+id/nav_favourite_fragment"
+        android:name="com.ahoy.weathertask.presentation.favourite.FavouriteFragment"
+        android:label="favourite"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_nav_favourite_Fragment_to_favourite_details_Fragment"
+            app:destination="@id/nav_favourite_details_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_search_fragment"
+        android:name="com.ahoy.weathertask.presentation.search.SearchFragment"
+        android:label="search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_nav_search_fragment_to_favourite_fragment"
+            app:destination="@id/nav_favourite_fragment" />
+        <action
+            android:id="@+id/action_nav_search_Fragment_to_home_fragment"
+            app:destination="@id/nav_home_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings_fragment"
+        android:name="com.ahoy.weathertask.presentation.settings.SettingsFragment"
+        android:label="settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/nav_favourite_details_fragment"
+        android:name="com.ahoy.weathertask.presentation.favouritedetails.FavouriteDetailsFragment"
+        android:label="favourite_details"
+        tools:layout="@layout/fragment_favourite_details">
+        <argument
+            android:name="item"
+            app:argType="com.ahoy.weathertask.domain.model.CityModel" />
+    </fragment>
+</navigation>

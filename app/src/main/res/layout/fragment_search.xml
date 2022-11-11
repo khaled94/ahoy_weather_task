@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_city_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:defaultQueryHint="@string/city_name"
+        app:iconifiedByDefault="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_city_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/sv_city_name"
+        app:layout_constraintTop_toBottomOf="@id/sv_city_name">
+
+        <TextView
+            android:id="@+id/tv_country_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_humidity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/humidity"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_country_title" />
+
+        <TextView
+            android:id="@+id/tv_temp_day_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temp_day"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/tv_country_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_humidity_title" />
+
+        <TextView
+            android:id="@+id/tv_temp_max_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temp_max"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/tv_country_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_temp_day_title" />
+
+        <TextView
+            android:id="@+id/tv_temp_min_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temp_min"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/tv_country_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_temp_max_title" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/dim_grey"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tv_country_title"
+            app:layout_constraintTop_toTopOf="@id/tv_country_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_country_title"/>
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/dim_grey"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tv_humidity_title"
+            app:layout_constraintTop_toTopOf="@id/tv_humidity_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_humidity_title"/>
+
+        <TextView
+            android:id="@+id/tv_temp_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/dim_grey"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tv_temp_day_title"
+            app:layout_constraintTop_toTopOf="@id/tv_temp_day_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_day_title" />
+
+        <TextView
+            android:id="@+id/tv_temp_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/dim_grey"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tv_temp_max_title"
+            app:layout_constraintTop_toTopOf="@id/tv_temp_max_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_max_title" />
+
+        <TextView
+            android:id="@+id/tv_temp_min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/dim_grey"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tv_temp_min_title"
+            app:layout_constraintTop_toTopOf="@id/tv_temp_min_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_min_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_to_favourite"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            android:background="@drawable/custom_button_background"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_temp_min_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

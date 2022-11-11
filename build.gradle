@@ -1,0 +1,21 @@
+apply from: 'dependencies.gradle'
+
+buildscript {
+    ext.kotlin_version = "1.6.21"
+    ext.kotlinx_version = '1.5.1-native-mt'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.40.1'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
