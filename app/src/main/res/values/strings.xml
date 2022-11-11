@@ -16,4 +16,7 @@
     <string name="description">Description</string>
     <string name="add_to_favourite">Add to Favourites</string>
     <string name="name">Name</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="temp_unit">Temp Unit</string>
 </resources>

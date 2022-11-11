@@ -19,7 +19,39 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       // createNotificationChannel()
-       // createAlarm()
+        createNotificationChannel()
+        createAlarm()
+    }
+
+    private fun createAlarm() {
+        val calendar: Calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, 6)
+        calendar.set(Calendar.MINUTE, 50)
+        //calendar.set(Calendar.SECOND, 0)
+
+        val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+        val receiverIntent = Intent(this, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            0,
+            receiverIntent,
+            0
+        )
+        alarmManager.set(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            pendingIntent
+        )
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= O) {
+            val name: CharSequence = "Weather_App"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel =
+                NotificationChannel("Weather_App_CHANNEL", name, importance)
+            val notificationManager = getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 }

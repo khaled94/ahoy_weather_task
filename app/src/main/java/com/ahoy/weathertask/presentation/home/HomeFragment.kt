@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.ahoy.weathertask.App
 import com.ahoy.weathertask.databinding.FragmentHomeBinding
 import com.ahoy.weathertask.presentation.utils.BaseFragment
 import com.ahoy.weathertask.presentation.utils.HomeFeature
@@ -65,37 +66,4 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    private fun createAlarm() {
-        val calendar: Calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, 6)
-        calendar.set(Calendar.MINUTE, 0)
-        calendar.set(Calendar.SECOND, 0)
-
-        val alarmManager = activity?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val receiverIntent = Intent(requireContext(), Receiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(
-            requireContext(),
-            0,
-            receiverIntent,
-            0
-        )
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
-    }
-
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name: CharSequence = "Weather_App"
-            val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel =
-                NotificationChannel("Weather_App_CHANNEL", name, importance)
-            val notificationManager =
-                activity!!.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
-        }
-    }
 }

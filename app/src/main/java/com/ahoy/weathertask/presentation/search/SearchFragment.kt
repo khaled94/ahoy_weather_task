@@ -87,4 +87,5 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
             findNavController().navigate(SearchFragmentDirections.actionNavSearchFragmentToHomeFragment())
         }
     }
+
 }

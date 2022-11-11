@@ -3,7 +3,6 @@ package com.ahoy.weathertask
 import com.ahoy.weathertask.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-import dagger.android.HasAndroidInjector
 
 class App : DaggerApplication()  {
 
@@ -13,5 +12,6 @@ class App : DaggerApplication()  {
 
     override fun onCreate() {
         super.onCreate()
+
     }
 }
